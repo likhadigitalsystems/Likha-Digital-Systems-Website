@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--<< Header Area >>-->
+    <head>
+        <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="themedevo">
+        <meta name="description" content="Likha Digital Systems - IT Solutions & Technology">
+        <!-- ======== Page title ============ -->
+        <title>Contact Us - Likha Digital Systems</title>
+        <!--<< Favcion >>-->
+        <link rel="shortcut icon" href="assets/img/favicon.png">
+        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--<< All Min Css >>-->
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!--<< MeanMenu.css >>-->
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <!--<< Icomon.css >>-->
+        <link rel="stylesheet" href="assets/css/icomon.css">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+            /* Make logo smaller on services page */
+            .header-logo img,
+            .header-logo-2 img {
+                max-height: 40px !important;
+                height: auto;
+                width: auto;
+                object-fit: contain;
+            }
+            /* Make logo bigger when navbar is scrolled (sticky) */
+            .sticky .header-logo img,
+            .sticky .header-logo-2 img {
+                max-height: 90px !important;
+                height: auto;
+                width: auto;
+                object-fit: contain;
+            }
+            /* Make search icon white by default, dark when scrolled */
+            .search-trigger.search-icon,
+            .search-trigger.search-icon i {
+                color: #fff !important;
+            }
+            /* When navbar is scrolled and turns white, make search icon dark */
+            .sticky .search-trigger.search-icon,
+            .sticky .search-trigger.search-icon i {
+                color: #05091D !important;
+            }
+            /* Likha Digital Systems Color Scheme - Blue Theme */
+            :root {
+                --likha-primary: #0066cc;
+                --likha-primary-dark: #0052a3;
+                --likha-primary-light: #0080ff;
+            }
+            /* CTA Section - Blue Background */
+            .cta-banner-wrapper {
+                background-color: var(--likha-primary) !important;
+            }
+            /* CTA List Icons - White on Blue Background */
+            .cta-banner-section .cta-list-items i {
+                color: #fff !important;
+            }
+            /* CTA List Clean Layout */
+            .cta-list-items ul li {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .cta-list-items ul li span {
+                line-height: 1.4;
+            }
+            .cta-list-items ul li i {
+                margin-top: 2px;
+                flex-shrink: 0;
+            }
+            /* CTA Banner Button - White Outline, Transparent Background */
+            .cta-banner-wrapper .main-button .theme-btn,
+            .cta-banner-wrapper .main-button .arrow-btn {
+                background-color: transparent !important;
+                border: 2px solid #fff !important;
+                color: #fff !important;
+            }
+            .cta-banner-wrapper .main-button .arrow-btn {
+                color: #fff !important;
+            }
+            .cta-banner-wrapper .main-button:hover .theme-btn,
+            .cta-banner-wrapper .main-button:hover .arrow-btn {
+                background-color: #fff !important;
+                color: var(--likha-primary) !important;
+            }
+            /* CTA Banner Alignment */
+            .cta-banner-wrapper .row {
+                align-items: center !important;
+            }
+            .cta-banner-wrapper h2 {
+                margin-bottom: 0;
+                line-height: 1.2;
+            }
+            .cta-banner-wrapper .cta-list-items {
+                margin-bottom: 0;
+            }
+            /* Footer Color Scheme - Match Likha Digital Systems Branding */
+            .footer-section {
+                background: #f8f9fa !important;
+            }
+            .footer-input input {
+                border-color: var(--likha-primary);
+            }
+            .footer-input input:focus {
+                border-color: var(--likha-primary-dark);
+                outline: none;
+            }
+            .newsletter-button {
+                background: transparent !important;
+                color: #05091D !important;
+            }
+            .newsletter-button i {
+                color: #05091D !important;
+            }
+            .newsletter-button:hover {
+                background: transparent !important;
+            }
+            .newsletter-button:hover i {
+                color: var(--likha-primary) !important;
+            }
+            .social-icon a {
+                background: transparent !important;
+                color: #05091D !important;
+                border: none !important;
+            }
+            .social-icon a:hover {
+                background: transparent !important;
+                color: var(--likha-primary) !important;
+            }
+            .wid-title h3 {
+                color: #05091D;
+            }
+            .footer-contact a,
+            .list-items a {
+                color: #666;
+            }
+            .footer-contact a:hover,
+            .list-items a:hover {
+                color: var(--likha-primary) !important;
+            }
+            .footer-bottom {
+                border-top: 1px solid #e8e8e8;
+            }
+            .footer-menu a {
+                color: #666;
+            }
+            .footer-menu a:hover {
+                color: var(--likha-primary) !important;
+            }
+            .footer-bottom a {
+                color: var(--likha-primary) !important;
+            }
+            /* Contact Form Styling */
+            .contact-form-items input[type="text"],
+            .contact-form-items input[type="email"],
+            .contact-form-items input[type="tel"],
+            .contact-form-items textarea,
+            .contact-form-items select {
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                padding: 15px 20px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                width: 100%;
+            }
+            .contact-form-items input[type="text"]:focus,
+            .contact-form-items input[type="email"]:focus,
+            .contact-form-items input[type="tel"]:focus,
+            .contact-form-items textarea:focus,
+            .contact-form-items select:focus {
+                border-color: var(--likha-primary);
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+            }
+            .contact-form-items textarea {
+                resize: vertical;
+                min-height: 120px;
+            }
+            .contact-form-items .theme-btn {
+                background-color: var(--likha-primary) !important;
+                color: #fff !important;
+                border: none !important;
+                padding: 15px 40px;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            .contact-form-items .theme-btn:hover {
+                background-color: var(--likha-primary-dark) !important;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+            }
+            .contact-form-items .theme-btn i {
+                color: #fff !important;
+            }
+            .contact-form-items input::placeholder,
+            .contact-form-items textarea::placeholder {
+                color: #999;
+            }
+            /* Form Message Styling */
+            .form-message {
+                display: none;
+                margin-bottom: 20px;
+                padding: 15px 20px;
+                border-radius: 8px;
+                font-weight: 500;
+                animation: slideDown 0.3s ease;
+            }
+            .form-message.success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+            }
+            .form-message.error {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+            }
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Preloader Start -->
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner">                
+                </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="L" class="letters-loading">
+                        L
+                    </span>
+                    <span data-text-preloader="I" class="letters-loading">
+                        I
+                    </span>
+                    <span data-text-preloader="K" class="letters-loading">
+                        K
+                    </span>
+                    <span data-text-preloader="H" class="letters-loading">
+                        H
+                    </span>
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+                </div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Back To Top Start -->
+         <button id="back-top" class="back-to-top">
+            <i class="fa-regular fa-arrow-up"></i>
+        </button>
+
+        <!--<< Mouse Cursor Start >>-->  
+        <div class="mouse-cursor cursor-outer"></div>
+        <div class="mouse-cursor cursor-inner"></div>
+        
+        <!-- Hero Section Start -->
+        <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+            <div class="container">
+                <div class="page-heading">
+                    <h1 class="wow fadeInUp" data-wow-delay=".3s">Contact</h1>
+                    <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                        <li>
+                            Contact
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offcanvas Area Start -->
+        <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/likha-logo.png" alt="Likha Digital Systems">
+                                </a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button>
+                                <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text d-none d-xl-block">
+                            Likha Digital Systems - Transforming businesses through innovative digital strategies and cutting-edge IT solutions.
+                        </p>
+                        <div class="mobile-menu fix mb-3"></div>
+                        <div class="offcanvas__contact">
+                            <h4>Contact Info</h4>
+                            <ul>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon">
+                                        <i class="fal fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="#">Sultan Kudarat, Philippines</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="mailto:likhadigitalsystems.tech@gmail.com"><span class="mailto:likhadigitalsystems.tech@gmail.com">likhadigitalsystems.tech@gmail.com</span></a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="fal fa-clock"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="#">Mon-Friday, 9am - 5pm</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="far fa-phone"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="tel:+639959651913">+639959651913</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="header-button mt-4">
+                                
+                            </div>
+                            <div class="main-button">
+                                <a href="contact.html"> <span class="theme-btn">Contact Us </span><span class="arrow-btn"><i class="icon-arrow-right"></i></span></a>
+                            </div>
+                            <div class="social-icon d-flex align-items-center">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
+
+        <!-- Header Section Start -->
+        <header id="header-sticky" class="header-section header-1 header-3">
+            <div class="container">
+                    <div class="mega-menu-wrapper">
+                        <div class="header-main">
+                            <div class="logo">
+                                <a href="index.html" class="header-logo">
+                                    <img src="assets/img/logo/likha-logo.png" alt="Likha Digital Systems">
+                                </a>
+                                <a href="index.html" class="header-logo-2">
+                                    <img src="assets/img/logo/likha-logo-color.png" alt="Likha Digital Systems">
+                                </a>
+                            </div>
+                            <div class="mean__menu-wrapper">
+                                <div class="main-menu">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="index.html">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="service-details.html">
+                                                    Services
+                                                    <i class="fa-solid fa-chevron-down"></i>
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li><a href="service.html">Service Page</a></li>
+                                                    <li><a href="service-details.html">Service Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="project-details.html">
+                                                    Projects
+                                                    <i class="fa-solid fa-chevron-down"></i>
+                                                </a>
+                                                <ul class="submenu">
+                                                    <li><a href="project.html">Projects</a></li>
+                                                    <li><a href="project-details.html">Project Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="header-right d-flex justify-content-end align-items-center">
+                                <a href="#0" class="search-trigger search-icon"><i class="fa-regular fa-magnifying-glass"></i></a>
+                                <div class="header__hamburger d-xl-block my-auto">
+                                    <div class="sidebar__toggle">
+                                        <div class="header-bar">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+
+        <!-- Contact Section Start -->
+        <section class="contact-section-12 fix section-padding">
+            <div class="container">
+                <div class="contact-wrapper-12">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="contact-left-items">
+                                <div class="section-title mb-0">
+                                    <h2>Contact Us</h2>
+                                </div>
+                                <div class="contact-area">
+                                    <div class="contact-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <h5>Address</h5>
+                                        </div>
+                                        <div class="content">
+                                            <h6>
+                                                Sultan Kudarat, Philippines
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <h5>Phone</h5>
+                                        </div>
+                                        <div class="content">
+                                            <h6>
+                                                <a href="tel:+639959651913">+639959651913</a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item mb-0">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-envelope"></i>
+                                            <h5>E-mail</h5>
+                                        </div>
+                                        <div class="content">
+                                            <h6>
+                                                <a href="mailto:likhadigitalsystems.tech@gmail.com">
+                                                    likhadigitalsystems.tech@gmail.com
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="google-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5!2d124.6717!3d6.6920!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDEnMzEuMiJOIDEyNMKwNDAnMTguMSJF!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" style="border:0; width:100%; height:300px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="contact-box">
+                                <div class="section-title mb-0">
+                                    <h2>Get In Touch</h2>
+                                </div>
+                                <div id="form-message" class="form-message" style="display: none; margin-bottom: 20px; padding: 15px; border-radius: 8px; font-weight: 500;"></div>
+                                <form action="/api/contact" id="contact-form" method="POST" class="contact-form-items">
+                                    <div class="row g-4">
+                                        <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                                            <div class="form-clt">
+                                                <input type="text" name="name" id="name" placeholder="Your Name *" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                                            <div class="form-clt">
+                                                <input type="email" name="email" id="email" placeholder="Your Email *" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                                            <div class="form-clt">
+                                                <input type="tel" name="phone" id="phone" placeholder="Phone Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                                            <div class="form-clt">
+                                                <div class="form">
+                                                    <select class="single-select w-100" name="service">
+                                                        <option value="">Select Service (Optional)</option>
+                                                        <option value="Custom Software Development">Custom Software Development</option>
+                                                        <option value="Web & Mobile Applications">Web & Mobile Applications</option>
+                                                        <option value="Digital Transformation">Digital Transformation</option>
+                                                        <option value="IT Infrastructure Management">IT Infrastructure Management</option>
+                                                        <option value="Technical Support & Maintenance">Technical Support & Maintenance</option>
+                                                        <option value="General Inquiry">General Inquiry</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
+                                            <div class="form-clt">
+                                                <textarea name="message" id="message" rows="6" placeholder="Tell us about your project or inquiry... *" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 wow fadeInUp" data-wow-delay=".9s">
+                                            <button type="submit" class="theme-btn">
+                                                <span>Send Message <i class="icon-arrow-right"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!--  CTA Section Start -->
+        <section class="cta-banner-section">
+            <div class="container">
+                <div class="cta-banner-wrapper">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6">
+                            <h2>
+                                Empowering Business Through Technology Excellence
+                            </h2>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="cta-list-items">
+                                <ul>
+                                    <li>
+                                        <i class="fa-regular fa-chevrons-right"></i>
+                                        <span>Custom Software<br>Development</span>
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-chevrons-right"></i>
+                                        <span>Web & Mobile<br>Applications</span>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <i class="fa-regular fa-chevrons-right"></i>
+                                        <span>Digital<br>Transformation</span>
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-chevrons-right"></i>
+                                        <span>IT Infrastructure<br>Management</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="main-button wow fadeInUp" data-wow-delay=".3s">
+                                <a href="contact.html"> <span class="theme-btn"> Contact Us </span><span class="arrow-btn"><i class="icon-arrow-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  Footer Section Start -->
+        <footer class="footer-section section-bg">
+            <div class="color-shape">
+                <img src="assets/img/footer-color.png" alt="img">
+            </div>
+            <div class="color-shape-2">
+                <img src="assets/img/footer-color-2.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="footer-logo-area">
+                    <a href="index.html" class="footer-logo wow fadeInUp" data-wow-delay=".3s">
+                        <img src="assets/img/logo/likha-logo-color.png" alt="Likha Digital Systems">
+                    </a>
+                    <div class="social-icon d-flex align-items-center wow fadeInUp" data-wow-delay=".5s">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget-wrapper">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="single-footer-widget">
+                                <div class="wid-title">
+                                    <h3>Contact</h3>
+                                </div>
+                                <div class="footer-content">
+                                    <ul class="footer-contact">
+                                        <li>
+                                            Email
+                                            <span>
+                                                <a href="mailto:likhadigitalsystems.tech@gmail.com">likhadigitalsystems.tech@gmail.com</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            Phone
+                                            <span>
+                                                <a href="tel:+639959651913">+639959651913</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            Location
+                                            <span>
+                                                Sultan Kudarat, Philippines
+                                            </span>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                            <div class="single-footer-widget">
+                                <div class="wid-title">
+                                    <h3>Service</h3>
+                                </div>
+                                <ul class="list-items">
+                                    <li>
+                                        <a href="service-details.html">
+                                            Custom Software Development
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">
+                                            Web & Mobile Applications
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">
+                                            Digital Transformation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">
+                                            IT Infrastructure Management
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">
+                                            Technical Support & Maintenance
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                            <div class="single-footer-widget">
+                                <div class="wid-title">
+                                    <h3>Contact</h3>
+                                </div>
+                                <div class="footer-content">
+                                   <p>Likha Digital Systems is a leading technology solutions provider dedicated to transforming businesses through innovative digital strategies. We deliver cutting-edge IT services and comprehensive digital transformation solutions.</p>
+                                   <div class="footer-input">
+                                    <input type="email" placeholder="Your email...">
+                                    <button class="newsletter-button" type="submit">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                                <div class="social-icon d-flex align-items-center">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-wrapper d-flex align-items-center justify-content-between">
+                        <p class="wow fadeInLeft color-2" data-wow-delay=".3s">
+                            © All Copyright 2026 by <a href="index.html">Likha</a>
+                        </p>
+                        <ul class="footer-menu wow fadeInRight" data-wow-delay=".5s">
+                            <li>
+                                <a href="contact.html">
+                                    Terms & Condition
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        
+
+        <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!--<< Viewport Js >>-->
+        <script src="assets/js/viewport.jquery.js"></script>
+        <!--<< Bootstrap Js >>-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--<< Nice Select Js >>-->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!--<< Waypoints Js >>-->
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <!--<< Counterup Js >>-->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!--<< Swiper Slider Js >>-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!--<< MeanMenu Js >>-->
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <!--<< Magnific Popup Js >>-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!--<< Wow Animation Js >>-->
+        <script src="assets/js/wow.min.js"></script>
+        <!--<< Ajax Js >>-->
+        <script src="assets/js/ajax-mail.js"></script>
+        <!--<< Main.js >>-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

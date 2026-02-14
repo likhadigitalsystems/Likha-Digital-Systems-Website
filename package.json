@@ -1,0 +1,16 @@
+{
+  "name": "likha-digital-systems-website",
+  "version": "1.0.0",
+  "description": "Likha Digital Systems Website",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.x"
+  }
+}
+

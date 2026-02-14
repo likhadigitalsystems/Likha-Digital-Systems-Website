@@ -1,0 +1,345 @@
+.how-work-items {
+    margin-top: 30px;
+    text-align: center;
+    .how-work-img {
+        max-width: 130px;
+        margin: 0 auto 30px;
+        position: relative;
+
+        .number {
+            font-size: 18px;
+            font-weight: 400;
+            background-color: $theme-color;
+            display: inline-block;
+            color: $white;
+            font-family: $body-font;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.how-work-section {
+    position: relative;
+
+    .line-shape-1 {
+        position: absolute;
+        top: 56%;
+        left: 39%;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+
+    .line-shape-2 {
+        position: absolute;
+        top: 58%;
+        left: 61%;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+    }
+}
+
+.choose-us-wrapper {
+    .choose-us-content {
+        .section-title {
+            p {
+                margin-top: 27px;
+            }
+        }
+
+        .main-button {
+            .theme-btn,.arrow-btn {
+                background-color: transparent;
+                border: 1px solid $theme-color-2;
+            }
+
+            &:hover {
+                .theme-btn,.arrow-btn {
+                    background-color: $theme-color-2;
+                    color: $header-color;
+                }
+            }
+        }
+
+        .list-items {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+
+            @include breakpoint (max-xl){
+               flex-wrap: wrap;
+               gap: 20px;
+            }
+
+            ul {
+                li {
+                    i {
+                        color: #05091D;
+                        margin-right: 10px;
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .choose-us-img {
+        margin-left: 55px;
+        max-width: 468px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-xl){
+            margin-left: 0;
+            max-width: 900px;
+        }
+
+        img {
+            @include imgw;
+        }
+
+        .line-shape {
+            position: absolute;
+            right: -100px;
+            top: 5%;
+            z-index: -1;
+        }
+
+        .dot-shape {
+            position: absolute;
+            bottom: -50px;
+            right: -100px;
+        }
+    }
+}
+
+.marqee-wrapper {
+    background-color: $theme-color;
+    padding: 30px 0;
+
+    &.style-3 {
+        border-top: 3px solid $theme-color-3;
+        border-bottom: 3px solid $theme-color-3;
+        background-color: transparent;
+        margin-bottom: 7px;
+
+        .marqee-text {
+            color: $header-color;
+        }
+
+        .marqee-icon {
+            background-color: rgba(5, 9, 29, .1);
+        }
+    }
+
+    &.style-22 {
+        background-color: #05091D;
+
+        .marqee-text {
+            font-weight: 300;
+        }
+
+        .marqee-icon {
+            background-color: $theme-color-2;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 65px;
+    
+        }
+    }
+
+    .marqee-icon {
+        background-color: rgba(255, 255, 255, .1);
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 65px;
+
+    }
+    
+    .marqee-text {
+        color: $white;
+    }
+}
+
+
+.achievement-wrapper {
+    padding: 100px 80px;
+    background-color: $theme-color;
+    @include flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-right: -25%;
+    position: relative;
+    z-index: 9;
+
+    @include breakpoint (max-xxxl){
+        margin-right: 0;
+        flex-wrap: wrap;
+    }
+
+    @include breakpoint (max-md){
+       padding: 50px 40px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 60px 50px;
+        text-align: center;
+        justify-self: center;
+        gap: 30px;
+    }
+
+    .counter-area {
+        @include flex;
+        gap: 100px;
+
+        @include breakpoint (max-xxl){
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        @include breakpoint (max-sm){
+            text-align: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .counter-items {
+            &:not(:last-child){
+                border-right: 1px solid $border-color;
+                padding-right: 70px;
+
+                @include breakpoint (max-xl){
+                    padding-right: 0;
+                    border: none;
+                }
+            }
+            .content {
+                margin-top: 20px;
+
+                h2 {
+                    color: $white;
+                }
+
+                p {
+                    color: $white;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    &.style-2 {
+       background-color: initial;
+        margin-right: 0;
+        padding: 80px 0;
+
+        .counter-area {
+            gap: 70px;
+
+            @include breakpoint (max-sm){
+               gap: 30px;
+            }
+
+            .counter-items {
+                &:not(:last-child){
+                    border-right: 2px solid rgba(243, 247, 251, 0.16);
+                    
+                    @include breakpoint (max-xl){
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.process-work-wrapper {
+    position: relative;
+
+    .work-process-items {
+        margin-top: 30px;
+    
+        .icon {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: $white;
+            box-shadow: $shadow;
+            position: relative;
+            margin: 0 auto;
+    
+            .number {
+                width: 34px;
+                height: 34px;
+                line-height: 34px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: $theme-color;
+                color: $white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-weight: 400;
+            }
+        }
+    
+        .content {
+            margin-top: 30px;
+    
+            h4 {
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+    
+            &.style-2 {
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .line-shape {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 880px;
+
+        img {
+            @include imgw;
+        }
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+    }
+}
