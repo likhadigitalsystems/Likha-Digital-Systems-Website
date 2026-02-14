@@ -1,5 +1,18 @@
 const nodemailer = require('nodemailer');
 
+// Helper function to escape HTML
+function escapeHtml(text) {
+  if (!text) return '';
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
+
 module.exports = async (req, res) => {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -36,10 +49,14 @@ module.exports = async (req, res) => {
     }
 
     // Get email configuration from environment variables
+    const smtpSecure = process.env.SMTP_SECURE?.toLowerCase();
+    const smtpPort = parseInt(process.env.SMTP_PORT || '587');
+    
     const smtpConfig = {
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_SECURE === 'ssl',
+      port: smtpPort,
+      secure: smtpSecure === 'ssl' || smtpPort === 465, // SSL for port 465
+      requireTLS: smtpSecure === 'tls' || smtpPort === 587, // TLS for port 587
       auth: {
         user: process.env.SMTP_USERNAME,
         pass: process.env.SMTP_PASSWORD,
@@ -63,16 +80,43 @@ module.exports = async (req, res) => {
 
     // Build email content
     const subject = `New Contact Form Submission from ${name}`;
-    let emailContent = `New Contact Form Submission\n\n`;
-    emailContent += `Name: ${name}\n`;
-    emailContent += `Email: ${email}\n`;
+    
+    // Plain text version
+    let textContent = `New Contact Form Submission\n\n`;
+    textContent += `Name: ${name}\n`;
+    textContent += `Email: ${email}\n`;
     if (phone) {
-      emailContent += `Phone: ${phone}\n`;
+      textContent += `Phone: ${phone}\n`;
     }
     if (service) {
-      emailContent += `Service: ${service}\n`;
+      textContent += `Service: ${service}\n`;
     }
-    emailContent += `\nMessage:\n${message}\n`;
+    textContent += `\nMessage:\n${message}\n`;
+
+    // HTML version for better formatting (with proper escaping)
+    const escapedName = escapeHtml(name);
+    const escapedEmail = escapeHtml(email);
+    const escapedPhone = phone ? escapeHtml(phone) : '';
+    const escapedService = service ? escapeHtml(service) : '';
+    const escapedMessage = escapeHtml(message).replace(/\n/g, '<br>');
+    
+    let htmlContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">New Contact Form Submission</h2>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+          <p style="margin: 10px 0;"><strong>Name:</strong> ${escapedName}</p>
+          <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${escapedEmail}">${escapedEmail}</a></p>
+          ${phone ? `<p style="margin: 10px 0;"><strong>Phone:</strong> <a href="tel:${escapedPhone}">${escapedPhone}</a></p>` : ''}
+          ${service ? `<p style="margin: 10px 0;"><strong>Service:</strong> ${escapedService}</p>` : ''}
+        </div>
+        <div style="margin: 20px 0;">
+          <h3 style="color: #333;">Message:</h3>
+          <p style="background-color: #fff; padding: 15px; border-left: 4px solid #007bff; white-space: pre-wrap;">${escapedMessage}</p>
+        </div>
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+        <p style="color: #666; font-size: 12px;">This email was sent from the contact form on your website.</p>
+      </div>
+    `;
 
     // Send email
     const mailOptions = {
@@ -80,7 +124,8 @@ module.exports = async (req, res) => {
       to: recipientEmail,
       replyTo: email,
       subject: subject,
-      text: emailContent,
+      text: textContent,
+      html: htmlContent,
     };
 
     await transporter.sendMail(mailOptions);
