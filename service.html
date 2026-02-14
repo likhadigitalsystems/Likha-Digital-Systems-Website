@@ -32,6 +32,14 @@
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
         <style>
+            /* Likha Logo Sizing */
+            .logo img,
+            .offcanvas__logo img {
+                max-height: 70px;
+                height: auto;
+                width: auto;
+                object-fit: contain;
+            }
             /* Make logo smaller on services page */
             .header-logo img,
             .header-logo-2 img {
@@ -197,6 +205,48 @@
             .footer-bottom a {
                 color: var(--likha-primary) !important;
             }
+            /* Make offcanvas contact icons blue */
+            .offcanvas__contact-icon i {
+                color: #0066cc !important;
+            }
+            /* Make offcanvas buttons blue */
+            .offcanvas__contact .main-button .theme-btn,
+            .offcanvas__contact .main-button .arrow-btn {
+                background-color: #0066cc !important;
+                border-color: #0066cc !important;
+            }
+            .offcanvas__contact .main-button:hover .theme-btn,
+            .offcanvas__contact .main-button:hover .arrow-btn {
+                background-color: #0052a3 !important;
+                border-color: #0052a3 !important;
+            }
+            /* Make offcanvas close button blue */
+            .offcanvas__close {
+                background-color: #0066cc !important;
+            }
+            .offcanvas__close:hover {
+                background-color: #0052a3 !important;
+            }
+            /* Make offcanvas left border blue */
+            .offcanvas__info {
+                border-left-color: #0066cc !important;
+            }
+            @media (max-width: 768px) {
+                /* Fix navbar position on mobile - lower it down */
+                .header-section {
+                    top: 20px !important;
+                }
+            }
+            @media (max-width: 991px) {
+                /* Fix navbar position on tablet and mobile */
+                .header-section {
+                    top: 15px !important;
+                }
+                /* When navbar is sticky on mobile, keep it at top */
+                .header-section.sticky {
+                    top: 0 !important;
+                }
+            }
         </style>
     </head>
     <body>
@@ -269,7 +319,7 @@
                             </div>
                         </div>
                         <p class="text d-none d-xl-block">
-                            Nullam dignissim, ante scelerisque the  is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.
+                            Likha Digital Systems is a leading technology solutions provider dedicated to transforming businesses through innovative digital strategies. We deliver cutting-edge IT services, custom software development, and comprehensive digital transformation solutions that drive growth and efficiency.
                         </p>
                         <div class="mobile-menu fix mb-3"></div>
                         <div class="offcanvas__contact">
@@ -280,7 +330,7 @@
                                         <i class="fal fa-map-marker-alt"></i>
                                     </div>
                                     <div class="offcanvas__contact-text">
-                                        <a target="_blank" href="#">Main Street, Melbourne, Australia</a>
+                                        <a target="_blank" href="#">Sultan Kudarat, Philippines</a>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
@@ -288,7 +338,7 @@
                                         <i class="fal fa-envelope"></i>
                                     </div>
                                     <div class="offcanvas__contact-text">
-                                        <a href="mailto:info@example.com"><span class="mailto:info@example.com">info@example.com</span></a>
+                                        <a href="mailto:likhadigitalsystems.tech@gmail.com"><span class="mailto:likhadigitalsystems.tech@gmail.com">likhadigitalsystems.tech@gmail.com</span></a>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
@@ -296,7 +346,7 @@
                                         <i class="fal fa-clock"></i>
                                     </div>
                                     <div class="offcanvas__contact-text">
-                                        <a target="_blank" href="#">Mod-friday, 09am -05pm</a>
+                                        <a target="_blank" href="#">Always Open</a>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-center">
@@ -304,7 +354,7 @@
                                         <i class="far fa-phone"></i>
                                     </div>
                                     <div class="offcanvas__contact-text">
-                                        <a href="tel:+11002345909">+11002345909</a>
+                                        <a href="tel:+639959651913">+639959651913</a>
                                     </div>
                                 </li>
                             </ul>

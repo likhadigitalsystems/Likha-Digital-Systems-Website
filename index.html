@@ -261,6 +261,20 @@
                 .about-section .section-title h2 {
                     font-size: 2rem;
                 }
+                /* Fix navbar position on mobile - lower it down */
+                .header-section {
+                    top: 20px !important;
+                }
+            }
+            @media (max-width: 991px) {
+                /* Fix navbar position on tablet and mobile */
+                .header-section {
+                    top: 15px !important;
+                }
+                /* When navbar is sticky on mobile, keep it at top */
+                .header-section.sticky {
+                    top: 0 !important;
+                }
             }
         </style>
     </head>
